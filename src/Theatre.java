@@ -1,13 +1,13 @@
 public class Theatre {
     public static void main(String[] args) {
         // 1. Создаём актёров
-        Actor actor1 = new Actor("Анна", "Петрова", "женский", 1.70);
-        Actor actor2 = new Actor("Иван", "Сидоров", "мужской", 1.85);
-        Actor actor3 = new Actor("Мария", "Кузнецова", "женский", 1.65);
+        Actor actor1 = new Actor("Анна", "Петрова", Person.Gender.FEMALE, 1.70);
+        Actor actor2 = new Actor("Иван", "Сидоров", Person.Gender.MALE, 1.85);
+        Actor actor3 = new Actor("Мария", "Кузнецова", Person.Gender.FEMALE, 1.65);
 
         // 2. Создаём режиссёров
-        Director director1 = new Director("Пётр", "Иванов", "мужской", 10);
-        Director director2 = new Director("Елена", "Смирнова", "женский", 8);
+        Director director1 = new Director("Пётр", "Иванов", Person.Gender.MALE, 10);
+        Director director2 = new Director("Елена", "Смирнова", Person.Gender.FEMALE, 8);
 
         // 3. Создаём автора музыки и хореографа (используются как строки в спектаклях)
         String musicAuthor = "Пётр Чайковский";
@@ -42,7 +42,7 @@ public class Theatre {
 
         // 7. Заменяем актёра в балете (Сидорова на нового)
         System.out.println("\n--- Замена актёра в балете ---");
-        Actor newActor = new Actor("Алексей", "Новиков", "мужской", 1.80);
+        Actor newActor = new Actor("Алексей", "Новиков", Person.Gender.MALE, 1.80);
         ballet.replaceActor("Сидоров", newActor);
 
         System.out.println("\nСписок актёров балета после замены:");
@@ -51,7 +51,7 @@ public class Theatre {
 
         // 8. Пытаемся заменить несуществующего актёра в опере
         System.out.println("\n--- Попытка замены несуществующего актёра в опере ---");
-        opera.replaceActor("Васильев", new Actor("Дмитрий", "Васильев", "мужской", 1.78));
+        opera.replaceActor("Васильев", new Actor("Дмитрий", "Васильев", Person.Gender.MALE, 1.78));
 
         // 9. Выводим либретто для оперного и балетного спектаклей
         System.out.println("\n=== Либретто оперы «Травиата» ===");
